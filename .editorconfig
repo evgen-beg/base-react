@@ -1,0 +1,24 @@
+# http://editorconfig.org
+
+# Указывает, что это основной файл конфигурации для EditorConfig
+root = true
+
+# Настройки по умолчанию для всех файлов
+[*]
+end_of_line = lf                   # Использует перевод строки LF (Unix/Linux)
+charset = utf-8                    # Кодировка UTF-8
+insert_final_newline = true        # Добавляет новую строку в конце файла, если её нет
+trim_trailing_whitespace = true    # Удаляет пробелы в конце каждой строки
+
+# Настройки для файлов .json
+[*.json]
+insert_final_newline = false       # Не добавляет пустую строку в конце файлов JSON
+
+# Настройки для файлов .md (Markdown)
+[*.md]
+trim_trailing_whitespace = false   # Сохраняет пробелы в конце строк (полезно для Markdown, где пробелы могут влиять на форматирование)
+
+# Настройки для файлов .js, .ts, .json
+[*.{js,ts,json}]
+indent_size = 2                    # Задает отступ в 2 пробела
+indent_style = space               # Использует пробелы для отступов (вместо табуляции)

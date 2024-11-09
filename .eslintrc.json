@@ -1,0 +1,108 @@
+{
+  "env": { 
+    "browser": true,   // Указывает на окружение браузера (глобальные объекты браузера доступны)
+    "es2022": true,    // Указывает, что используется ECMAScript 2022
+    "node": true       // Указывает на окружение Node.js (глобальные объекты Node.js доступны)
+  },
+  "parserOptions": {
+    "sourceType": "module",  // Указывает, что код использует модули (import/export)
+    "ecmaVersion": "latest", // Используется последняя версия ECMAScript
+    "ecmaFeatures": {
+      "jsx": true  // Включает поддержку JSX для React
+    }
+  },
+  "rules": {
+    "eqeqeq": ["error", "always"],  // Требует использования строгих операторов равенства (===)
+    "no-loop-func": ["error"],      // Запрещает объявления функций внутри циклов
+    "no-self-compare": ["error"],   // Запрещает самосравнение (например, x === x)
+    "no-unmodified-loop-condition": ["error"], // Запрещает условия, которые не изменяются в цикле
+    "no-useless-concat": ["error"], // Запрещает конкатенацию строк с использованием пустой строки
+    "curly": ["error", "multi-line", "consistent"], // Требует использования фигурных скобок в многострочных блоках
+    "no-return-await": ["error"],   // Запрещает использование return await, так как это не нужно
+    "arrow-parens": ["error", "always"],  // Требует обязательных круглых скобок вокруг аргументов стрелочной функции
+    "arrow-spacing": ["error"],  // Требует пробела до и после стрелки в стрелочных функциях
+    "no-useless-computed-key": ["error"], // Запрещает использование бесполезных вычисляемых свойств объектов
+    "no-useless-rename": ["error"], // Запрещает бесполезные переименования
+    "no-var": ["error"],  // Запрещает использование var, следует использовать let или const
+    "object-shorthand": ["error", "always"],  // Требует использования сокращенного синтаксиса для объектов
+    "prefer-arrow-callback": ["error"],  // Предпочтительнее использовать стрелочные функции для обратных вызовов
+    "prefer-const": ["error"],  // Требует использования const для неизменяемых переменных
+    "prefer-numeric-literals": ["error"],  // Требует использования числовых литералов вместо строковых (например, 0b10 вместо "0b10")
+    "prefer-rest-params": ["error"],  // Предпочтительнее использовать параметры rest вместо arguments
+    "prefer-spread": ["error"],  // Предпочтительнее использовать spread вместо apply
+    "rest-spread-spacing": ["error", "never"],  // Запрещает пробелы между rest/spread операторами и переменными
+    "template-curly-spacing": ["error", "never"], // Запрещает пробелы внутри фигурных скобок в шаблонных строках
+    "no-unused-private-class-members": ["error"], // Запрещает неиспользуемые приватные члены классов
+    "no-invalid-this": ["error"],  // Запрещает использование this в функциях, где его нет
+    "class-methods-use-this": ["warn"],  // Предупреждает, если метод класса не использует this
+    "handle-callback-err": ["error", "^err"],  // Требует обработки ошибок в обратных вызовах, если имя ошибки начинается с 'err'
+    "no-console": ["off"],  // Отключает предупреждения о использовании console.log
+    "no-constant-condition": ["error", { "checkLoops": false }],  // Запрещает условие с постоянной константой, кроме циклов
+    "no-return-assign": ["error"],  // Запрещает присваивание в return выражениях
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,  // Отступы для case внутри switch: 1 пробел
+        "VariableDeclarator": { "let": 2, "const": 3 },  // Отступы для let и const: 2 пробела, 3 для переменных с const
+        "MemberExpression": 1  // Отступы для выражений-членов: 1 пробел
+      }
+    ],
+    "block-spacing": ["error", "always"],  // Требует пробела между блоками кода
+    "brace-style": ["error", "1tbs", { "allowSingleLine": true }],  // Требует стиль "One True Brace Style" (1TBS)
+    "camelcase": ["error"],  // Требует использования camelCase для именования переменных
+    "comma-dangle": ["error", "always-multiline"],  // Требует запятую на последнем элементе в многострочных конструкциях
+    "comma-spacing": ["error", { "before": false, "after": true }],  // Требует пробела после запятой
+    "comma-style": ["error", "last"],  // Запрещает использование запятой в начале строки
+    "eol-last": ["error"],  // Требует пустой строки в конце файла
+    "func-call-spacing": ["error", "never"],  // Запрещает пробелы перед скобками при вызове функции
+    "key-spacing": [
+      "error",
+      { "beforeColon": false, "afterColon": true, "mode": "minimum" }  // Требует пробела после двоеточия в объектах
+    ],
+    "keyword-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true,
+        "overrides": { "function": { "after": false } }  // Требует пробелы перед и после ключевых слов
+      }
+    ],
+    "max-len": ["error", { "code": 200, "ignoreUrls": true }],  // Максимальная длина строки - 200 символов, игнорирует URL
+    "max-nested-callbacks": ["error", { "max": 5 }],  // Максимальное количество вложенных обратных вызовов - 5
+    "new-cap": [
+      "error",
+      { "newIsCap": true, "capIsNew": false, "properties": true }  // Требует заглавной буквы для конструктора
+    ],
+    "new-parens": ["error"],  // Требует скобки при вызове конструктора
+    "no-lonely-if": ["error"],  // Запрещает одинокие if без else
+    "no-trailing-spaces": ["error"],  // Запрещает пробелы в конце строки
+    "no-unneeded-ternary": ["error"],  // Запрещает использование тернарных операторов без нужды
+    "no-whitespace-before-property": ["error"],  // Запрещает пробелы перед свойствами объектов
+    "object-curly-spacing": ["error", "always"],  // Требует пробелы внутри фигурных скобок объектов
+    "operator-assignment": ["error", "always"],  // Требует использование оператора присваивания с операциями
+    "operator-linebreak": [
+      "error",
+      "after",
+      { "overrides": { "?": "before", ":": "before" } }  // Требует переводы строк после операторов
+    ],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],  // Требует использования одинарных кавычек для строк
+    "semi": ["error", "always"],  // Требует точку с запятой в конце выражений
+    "semi-spacing": ["error", { "before": false, "after": true }],  // Требует пробел после точки с запятой
+    "space-before-blocks": ["error", "always"],  // Требует пробел перед блоками кода
+    "space-before-function-paren": [
+      "error",
+      { "anonymous": "never", "named": "never", "asyncArrow": "always" }  // Требует пробел перед скобками функций
+    ],
+    "space-in-parens": ["error", "never"],  // Запрещает пробелы внутри скобок
+    "space-infix-ops": ["error"],  // Требует пробелы вокруг операторов
+    "space-unary-ops": [
+      "error",
+      { "words": true, "nonwords": false, "overrides": { "typeof": false } }  // Требует пробелы для унарных операторов
+    ],
+    "no-extra-parens": "off",  // Отключает предупреждения по поводу лишних скобок
+    "no-shadow-restricted-names": ["error"],  // Запрещает использование зарезервированных имен для переменных
+    "no-use-before-define": ["error", { "functions": false }],  // Запрещает использование переменных до их объявления
+    "no-unused-vars": "off"  // Отключает предупреждения о неиспользуемых переменных
+  }
+}
